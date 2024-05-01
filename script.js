@@ -1,13 +1,14 @@
 let playerInput = prompt("What do you choose? Rock, Paper, or Scissors?")
+const playerSelection = getPlayerChoice()
+const aiSelection = getComputerChoice()
 let playerScore = 0
 let aiScore = 0
 
 function getComputerChoice() {
-    let aiInput = Math.floor(Math.random() * 3);
-    console.log(aiInput)
+    return Math.floor(Math.random() * 3);
 }
 
- function getPlayerChoice() {
+function getPlayerChoice() {
     if (playerInput = "Rock") {
         playerInput = 0
         console.log(playerInput)
@@ -17,8 +18,16 @@ function getComputerChoice() {
     } else if (playerInput = "Scissors") {
         playerInput = 2
         console.log(playerInput)
- }
+    }
+    return(playerInput)
+}
 
-getPlayerChoice()
+console.log(aiSelection)
 
-getComputerChoice()
+function playRound(playerChoice, aiChoice) {
+    if (playerChoice === aiChoice) {
+        console.log("Its a tie!")
+    } 
+}
+
+playRound(playerSelection, aiSelection)
