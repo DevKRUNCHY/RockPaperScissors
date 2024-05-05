@@ -9,11 +9,11 @@ function getPlayerChoice() {
 function getComputerChoice() {
     let choice = Math.floor(Math.random() * 3);
     if (choice == 1) {
-        choice = rock
+        choice = "rock"
     } else if (choice == 2) {
-        choice = paper 
+        choice = "paper"
     } else if (choice == 3) {
-        choice == scissors
+        choice == "scissors"
     }
     return(choice)
 }
