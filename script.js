@@ -2,7 +2,8 @@ let playerScore = 0
 let aiScore = 0
 
 function getPlayerChoice() {
-    return prompt("What do you choose? Rock, Paper, or Scissors?")
+    let choice = prompt("What do you choose? Rock, Paper, or Scissors?")
+        return(choice.toLowerCase())
 }
 
 function getComputerChoice() {
