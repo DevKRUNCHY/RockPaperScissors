@@ -7,15 +7,15 @@ function getPlayerChoice() {
 }
 
 function getComputerChoice() {
-    let choice = Math.floor(Math.random() * 3);
-    if (choice == 1) {
-        choice = "rock"
-    } else if (choice == 2) {
-        choice = "paper"
-    } else if (choice == 3) {
-        choice == "scissors"
+    let botChoice = Math.floor(Math.random() * 3);
+    if (botChoice == 0) {
+        botChoice = "rock"
+    } else if (botChoice == 1) {
+        botChoice = "paper"
+    } else if (botChoice == 2) {
+        botChoice = "scissors"
     }
-    return(choice)
+    return(botChoice)
 }
 
 
@@ -26,29 +26,23 @@ function playRound() {
 
     if (playerChoice === aiChoice) {
         console.log("Its a tie!")
-    } else if (playerChoice == 2 && aiChoice == 0) {
-        console.log("You Lose! Scissors beats rock.")
-        aiScore += 1
-    } else if (playerChoice == 0 && aiChoice == 2) {
-        console.log("You Win! Rock beats Scissors.")
-        playerScore += 1
-    } else if (playerChoice < aiChoice) {
+    } else if (playerChoice == "rock" && aiChoice == "paper" || playerChoice == "paper" && aiChoice == "scissors" || playerChoice == "scissors" && aiChoice == "rock") {
         console.log("You Lose!")
         aiScore += 1
-    } else if (playerChoice > aiChoice) {
-        console.log("You Won!")
+    } else if (playerChoice == "paper" && aiChoice == "rock" || playerChoice == "scissors" && aiChoice == "paper" || playerChoice == "rock" && aiChoice == "scissors") {
+        console.log("You Win!")
         playerScore += 1
+    } else if (playerChoice !="") {
+        console.log("Typo occured.")
     }
-    console.log(`Player: ${playerScore}`)
-    console.log(`Bot: ${aiScore}`)
 }
 
 function playGame(amount) {
     for (let rounds = 0; rounds < amount; rounds++) {
         playRound()
+        console.log(`Player: ${playerScore}`)
+        console.log(`Bot: ${aiScore}`)
     }
 }
 
 playGame(5)
-
-
