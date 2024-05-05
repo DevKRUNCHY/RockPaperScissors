@@ -2,19 +2,19 @@ let playerScore = 0
 let aiScore = 0
 
 function getPlayerChoice() {
-    let playerInput = prompt("What do you choose? Rock, Paper, or Scissors?")
-    if (playerInput == "Rock") {
-        playerInput = 0
-    } else if (playerInput == "Paper") {
-        playerInput = 1
-    } else if (playerInput == "Scissors") {
-        playerInput = 2
-    }
-    return(playerInput)
+    return prompt("What do you choose? Rock, Paper, or Scissors?")
 }
 
 function getComputerChoice() {
-    return Math.floor(Math.random() * 3);
+    let choice = Math.floor(Math.random() * 3);
+    if (choice == 1) {
+        choice = rock
+    } else if (choice == 2) {
+        choice = paper 
+    } else if (choice == 3) {
+        choice == scissors
+    }
+    return(choice)
 }
 
 
