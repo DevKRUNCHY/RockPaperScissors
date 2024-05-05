@@ -1,2 +1,2 @@
-# RockPaperScissors
- Made with course from TOP
+# RPS Game
+Simple game of rock paper scissors.
